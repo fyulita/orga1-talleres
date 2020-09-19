@@ -1,0 +1,7 @@
+¿Es posible utilizar esta ALU con operandos interpretados como sin signo? ¿Cómo detectaría el overflow?
+
+Si. Si hacemos una suma (interpretando sin signo) y hay carry entonces el número que queremos representar es mayor
+que el máximo número representable. Por lo tanto, hay overflow. Si hacemos una resta y hay borrow entonces el número
+que queremos representar es negativo. Ya que estamos usando la interpretación sin signo los números negativos no
+son representables y entonces hay overflow. Por lo tanto, podemos usar la interpretación sin signo y si el flag
+C está prendido entonces hay overflow.

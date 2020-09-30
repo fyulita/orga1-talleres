@@ -1,0 +1,109 @@
+EJ 2 a)
+Entradas: clock, force_input, en_force_input, w_i y en_i. 
+	⁃	El force_input es el valor que yo quiero escribir sobre los registros que desee.
+	⁃	en_force_input es una entrada que me habilita la escritura.
+	⁃	w_i son las entradas que me permiten escribir sobre cada registro i.
+	⁃	en_i son las entradas que me permiten leer el valor almacenado en cada registro i.
+
+Salidas: R_i y BUS
+	⁃	R_i es el valor de lo que está almacenado en los registros i.
+	⁃	BUS es el valor de lo que está almacenado en el registro que yo quiero leer.
+	⁃	
+
+EJ 2 c)
+Secuencia de pasos:
+	- force_input = x
+	- en_force_input = 1
+	- w_0 = 1
+	- clk = 1
+	- clk = 0
+	- en_force_input = 0
+	- w_0 = 0
+	
+	- en_0 = 1
+	- w_1 = 1
+	- clk = 1
+	- clk = 0
+	- w_1 = 0
+	- en_0 = 0
+
+	- en_2 = 1
+	- w_0 = 1
+	- clk = 1
+	- clock = 0
+	- en_2 = 0
+	- w_0 = 0
+
+	- en_1 = 1
+	- w_2 = 1
+	- clk = 1
+	- clock = 0
+	- en_1 = 0
+	- w_2 = 0
+
+EJ 3 a)
+Entradas: clock, A, write_A, B, write_B, OP, en_out
+	⁃	A y B : representan los números con los que vamos a operar
+	⁃	write_A y write_B: son los controles que nos permiten escribir en los registros A y B
+	⁃	OP: representa la operación que deseamos hacer
+	⁃	en_out: es el control que nos permite mostrar el resultado de la operación
+Salidas: Flags, S, A_debug, B_debug, S_debug
+
+b) muestran el numero almacenado en cada registro en notación sin signo
+
+c) Secuencia:
+	⁃	force_input = 0100
+	⁃	w_2 = 1
+	⁃	en_force_input = 1
+	⁃	clock = 1, clock = 0
+	⁃	w_2 = 0
+	⁃	en_force_input = 0
+
+	⁃	force_input = 1101
+	⁃	w_3 = 1
+	⁃	en_force_input = 1
+	⁃	clock = 1, clock = 0
+	⁃	w_3 = 0
+	⁃	en_force_input = 0
+
+d) Secuencia:
+	⁃	force_input = 0100
+	⁃	w_0 = 1
+	⁃	en_force_input = 1
+	⁃	clock = 1, clock = 0
+	⁃	w_0 = 0
+	⁃	en_force_input = 0
+
+	⁃	force_input = 0000
+	⁃	w_1 = 1
+	⁃	en_force_input = 1
+	⁃	clock = 1, clock = 0
+	⁃	w_1 = 0
+	⁃	en_force_input = 0
+
+	⁃	en_out_0 = 1
+	⁃	w_alu_A = 1
+	⁃	clock = 1, clock = 0
+	⁃	en_out_0 = 0
+	⁃	w_alu_A = 0
+
+
+	⁃	en_out_1 = 1
+	⁃	w_alu_B = 1
+	⁃	clock = 1, clock = 0
+	⁃	en_out_1 = 0
+	⁃	w_alu_B = 0
+OR
+	⁃	op = 11
+	⁃	en_out_ALU = 1
+	⁃	W_2 = 1
+	⁃	clock = 1, clock = 0
+	⁃	W_2 = 0
+	⁃	en_out_ALU = 0
+SUB
+	⁃	op = 01
+	⁃	en_out_ALU = 1
+	⁃	W_3 = 1
+	⁃	clock = 1, clock = 0
+	⁃	W_3 = 0
+	⁃	en_out_ALU = 0

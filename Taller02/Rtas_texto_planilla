@@ -107,3 +107,7 @@ SUB
 	⁃	clock = 1, clock = 0
 	⁃	W_3 = 0
 	⁃	en_out_ALU = 0
+	
+e) la señal clk está negada para que primero se puedan cargar los valores en los registros y 
+una vez pasado el flanco alto del clk se guarda el resultado de la operación con los valores 
+de los registros.

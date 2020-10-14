@@ -1,0 +1,31 @@
+a)
+
+## main ##
+
+X FA00: 2 Palabras
+
+## llama ##
+
+X FA02: 2 Palabras
+X FA04: (CMP FEDE [F450]) 3 Palabras
+X FA07: Invalido!
+
+## subrut ##
+
+X FA08: (SUB R1 2114) 2 Palabras
+X FA0A: (JNE -009) 1 Palabra
+X FA0B: (RET) 1 Palabra
+
+--------------------------------------
+
+b)
+
+subrut - JNE = -009
+
+--------------------------------------
+
+c) Si, el programa termina al llegar a la dirección FA07
+ya que encuentra la instrucción 1101 111010 101101 que es
+inválida. El último valor que toma PC es FA08 y el último
+valor que toma SP es FFEE, ya que el programa hizo dos CALLs
+y un solo RET.

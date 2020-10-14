@@ -1,0 +1,52 @@
+a)
+
+## main ##
+
+X 8C00: 2 Palabras
+X 8C02: 2 Palabras
+X 8C04: 1 Palabra
+X 8C05: 1 Palabra
+X 8C06: 1 Palabra
+
+## cero ##
+
+- 8C07: 1 Palabra
+
+## huboOverflow ##
+
+X 8C08: 2 Palabras
+X 8C0A: 2 Palabras
+X 8C0C: 1 Palabra
+X 8C0D: 1 Palabra
+X 8C0E: 1 Palabra
+- 8C0F: 1 Palabra
+
+## dioNegativo ##
+
+X 8C10: 2 Palabras
+X 8C12: 1 Palabra
+- 8C13: 1 Palabra
+
+## finOk ##
+
+X 8C14: 1 Palabra
+
+---------------------------
+
+b)
+
+main - JE  = +002
+main - JL  = +010
+main - JVS = +001
+
+huboOverflow - JVS = -005
+huboOverflow - JE  = -007
+huboOverflow - JL  = +001
+
+dioNegativo - JE = +001
+
+---------------------------
+
+c) Si, ya que la última instrucción es 0000 en la dirección
+8C14 y es una instrucción inválida. El último valor que toma
+PC es 8C15.

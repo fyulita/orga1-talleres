@@ -1,0 +1,15 @@
+a)
+
+## main ##
+
+X 0001: 2 Palabras
+X 0003: 1 Palabra
+X 0004: 2 Palabras
+X 0006: 1 Palabra
+X 0007: 1 Palabra
+- 0008: 1 Palabra
+
+## seguir ##
+
+X 0009: 3 Palabras
+X 000C: Inválido!

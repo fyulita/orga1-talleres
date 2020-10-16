@@ -13,3 +13,8 @@ X 0007: 1 Palabra
 
 X 0009: 3 Palabras
 X 000C: Inválido!
+
+b) La ejecución del programa cambia ya que como ahora
+el programa está escrito desde la dirección 0x0000
+entonces cuando se ejecuta CMP R1 [[0x0004]] el valor
+de [[0x0004]] es distinto al caso anterior.

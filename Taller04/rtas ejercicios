@@ -1,0 +1,49 @@
+1) a) la memoria es de 256 bytes (256 palabras de 8 bits)
+   b) ninguna porque ya estan todas las combinaciones posibles de código de operacion siendo utilizadas 
+
+   c)
+
+   d) tiene un tamaño de 8 bits
+
+   e) el IR está dividido en 2 registros de 8 bits y se encuentra conectado al bus y al decoder.
+
+  2) 
+  	a) la señal inc funciona como incrementador en 1 del PC (por cada paso del clock)
+  	b) permite escribir los flags resultantes de cada operación
+  	c) La instruccion en la memoria va a determinar si se prenden las señales jx_microOp y load_microOp, que son necesarias para resolver los saltos condicionales. Luego, si se cumple la condicion - es decir - si el flag x está prendido, entonces se prenden dos multiplexores. El primero suma 2 al PC y el segundo hace que esta suma pase. Para esto es necesario que esté prendido el flag de la instruccion y la señal jx_microOp. Luego, para que se actualice el PC y no se incremente en 1 es necesario que esté prendida la señal load_microOp.
+  	d) ....
+
+3) 
+	b)
+		JMP seguir   0x00
+
+	    seguir:
+	    SET R0, 0xFF 0x02
+	    SET R1, 0x11 0x04
+
+	    siguiente:
+	    ADD R0, R1	 0x06
+	    JC siguiente 0x08
+
+	    halt:
+	    JMP halt	 0x0A
+
+	c) 30 ciclos
+	d) Suma: 8 microoperaciones
+	   Salto: si da verdadero hace 2 microoperaciones, caso contrario hace 0.
+
+	e)
+	JMP seguir:  4 , 2
+	SET R0 0XFF: 4 , 2
+	SET 21 0X11: 4 , 2
+	ADD R0 R1: 4 , 5
+	JC siguiente: 4, 3
+	ADD R0 R1: 4 , 5
+	JC siguiente: 4, 2
+	JMP halt: 4, 2
+
+	Todas las instrucciones tardan 125 ms.
+	Las ejecuciones de 2 tardan 62.5 ms.
+	Las ejecuciones de 3 tardan 93.75 ms.
+	Las ejecuciones de 5 tardan 156.25 ms.
+

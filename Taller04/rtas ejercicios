@@ -47,3 +47,53 @@
 	Las ejecuciones de 3 tardan 93.75 ms.
 	Las ejecuciones de 5 tardan 156.25 ms.
 
+4)
+UC
+ a) no se realizarían los saltos en el PC (avanzaría siempre de a 1 palabra)
+ b) siempre que el load_microOp esté encendido, el PC va a ir a la dirección 0x00
+ c) lo mismo que en b, pero el PC va a la dirección 0xFF
+
+ Decode
+ a) si se corta el cable, los ultimos 8 digitos quedarían siempre en 0 y por ende las instrucciones de tipo C y D no podrán ser utilizadas.
+ b) lo mismo que a)
+ c) va a pasar siempre el mismo valor (0xFF) como dirección de memoria o valor inmediato.
+
+ Memory
+ a) no se va a poder acceder a la memoria
+ b) siempre que este activado el enAddr, vas a acceder siempre a lo que esté en la posición 0x00
+ c) lo mismo que en b pero con la posición de memoria 0xFF
+
+ ALU
+ a) la ALU no funcionaría porque no se le estaría pasando ningún valor para la operación
+ b) El carry va a ser siempre 0 (por la cte 0 del multiplexor), el único flag prendido va a ser Z (siempre va a estar prendido), el resultado va a ser siempre 0 y el Registro ALU_OUT no va a guardar el resultado.
+ c) el Carry va a ser siempre 0, el flag Z va a estar siempre apagado, N va a estar prendido siempre y el Registro ALU_OUT va a guardar el resultado que va a ser siempre 0xff.
+
+PC
+a) no podés cargar valores porque está roto el cable
+b) no podés cargar valores porque siempre va a estar apagado el load
+c) va a cargar siempre lo que esté en inValue
+
+Registers
+a) no podés ver lo que hay guardado en el Registro porque está roto el cable
+b) lo mismo que en a) pero porque el enOut va a estar siempre apagado
+c) va a mostrar siempre lo que hay guardado en el Registro seleccionado
+
+microOrgaSmall
+a) como el cable está cortado la UC no puede saber los flags y por lo tanto no puede realizar los saltos
+b) nunca va a hacer saltos porque los flags van a estar siempre en 0
+c) cuando tenga que evaluar saltos siempre los va a hacer dado que todos los flags van a estar activados
+
+5) 
+JMP subrut
+subrut: 
+CMP R0, 0x00
+JZ halt
+ADD R1, R0
+SUB R0, 0X01
+JMP subrut
+
+halt:
+JMP halt
+
+
+

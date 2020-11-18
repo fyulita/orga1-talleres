@@ -2,6 +2,9 @@ SET R0, 0XFF
 SIG R0
 SET R1, 0xFF
 NEG R1
+SET R2, 0xAA 
+SET R3, 0x55 
+MIX R2, R3
 JMP halt
 
 halt:

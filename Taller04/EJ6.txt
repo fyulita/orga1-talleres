@@ -2,5 +2,8 @@
      |02| SIG R0
      |04| SET R1 , 0xFF
      |06| NEG R1
-     |08| JMP halt
-halt |0a| JMP halt
+     |08| SET R2 , 0xAA
+     |0a| SET R3 , 0x55
+     |0c| MIX R2 , R3
+     |0e| JMP halt
+halt |10| JMP halt

@@ -51,7 +51,7 @@ ALUops = {
     "CMP": 7,
     "SHR": 8,
     "SHL": 9,
-    "RESERVED10": 10,
+    "MIX": 10,
     "RESERVED11": 11,
     "cte0x00": 12,
     "cte0x01": 13,

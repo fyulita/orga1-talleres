@@ -1,0 +1,25 @@
+ - a -
+
+Fetch: PC + Memoria + Decoder + UC + Interrupt Controller
+Decode: Decoder + UC
+Execute: Lo que sea necesario
+
+ - b -
+
+En el Fetch, porque querés terminar de ejecutar la instrucción
+actual antes de atender la interrupción.
+
+ - c -
+
+En la memoria ROM de la UC.
+
+ - d -
+
+Usando el código de operación el microPC busca en el microcódigo
+cómo ejecutar esa operación.
+
+ - e -
+
+Usa flags para evaluar cierto estado y luego, si la operación es un
+IF, evalúa el estado para ver qué decisión toma y lo hace mediante
+multiplexores.

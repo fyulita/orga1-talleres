@@ -1,0 +1,16 @@
+ - b -
+
+3, porque queremos restarle 1 a R1 hasta que sea igual a R2. Como
+R1=0x03 y R2=0x00 entonces hay que restar tres veces, ya que cada
+interrupción le resta 1 a R1.
+
+ - c -
+
+Nada, porque la UC no está dispuesta a recibir interrupciones, ya que
+el flag I no está prendido hasta la instrucción STI. Una vez que haya
+ejecutado la instrucción STI entonces ahi va a atender la interrupción.
+
+ - d -
+
+No en este caso. A lo sumo si R1=0x01 entonces te ahorrás un cachito
+de loop. Podría generar un problema en otro programa.

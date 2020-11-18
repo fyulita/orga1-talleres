@@ -1,0 +1,27 @@
+   main |00| SET R0 , 0x00
+        |02| SET R1 , 0x0F
+        |04| STR [ 0xF0 ] , R1
+        |06| SET R2 , 0x02
+        |08| STR [ 0xF1 ] , R2
+        |0a| SET R3 , 0x20
+  while |0c| MOV R4 , R0
+        |0e| JMP mod
+    mod |10| SUB R4 , R3
+        |12| JZ bocina
+        |14| JN while
+        |16| JMP mod
+ bocina |18| LOAD R2 , [ 0xF1 ]
+        |1a| INC R2
+        |1c| STR [ 0xF1 ] , R2
+        |1e| JMP while
+    rai |20| LOAD R1 , [ 0xF0 ]
+        |22| SET R5 , 0x0F
+        |24| CMP R1 , R5
+        |26| JZ raitrue
+        |28| SET R1 , 0x0F
+        |2a| STR [ 0xF0 ] , R1
+        |2c| INC R0
+        |2e| IRET
+raitrue |30| SET R1 , 0x0C
+        |32| STR [ 0xF0 ] , R1
+        |34| IRET

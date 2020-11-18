@@ -1,0 +1,7 @@
+ - b -
+
+Si vale siempre 0 entonces la UC interpreta que nunca hay
+interrupciones y entonces no va a funcionar ningún dispositivo E/S. Si
+vale siempre 1 entonces la UC interpreta que siempre hay nuevas
+interrupciones y entonces nunca va a poder ejecutar ninguna
+instrucción porque va a estar siempre atendiendo las interrupciones.
